@@ -21,7 +21,7 @@ import kotlin.reflect.KClass
 class MainSessionNavHostFragment : TurboSessionNavHostFragment() {
     override val sessionName = "main"
 
-    override val startLocation = HOME_URL
+    override var startLocation = ""
 
     override val registeredActivities: List<KClass<out AppCompatActivity>>
         get() = listOf()
@@ -46,6 +46,8 @@ class MainSessionNavHostFragment : TurboSessionNavHostFragment() {
         super.onSessionCreated()
         session.webView.settings.userAgentString = customUserAgent(session.webView)
         session.webView.initDayNightTheme()
+
+        startLocation = "$HOME_URL/$tag"
 
         if (BuildConfig.DEBUG) {
             session.setDebugLoggingEnabled(true)
