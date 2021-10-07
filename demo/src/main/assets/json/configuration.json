@@ -49,7 +49,7 @@
         "/numbers$"
       ],
       "properties": {
-        "uri": "turbo://fragment/numbers",
+        "uri": "turbo://fragment/numbers/sheet",
         "title": "Numbers"
       }
     },

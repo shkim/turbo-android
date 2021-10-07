@@ -25,7 +25,12 @@ class NumberBottomSheetFragment : TurboBottomSheetDialogFragment(), NavDestinati
 
     private fun initView(view: View) {
         view.findViewById<MaterialTextView>(R.id.number).apply {
-            text = Uri.parse(location).lastPathSegment
+            text = "CLICK TO CLOSE" //Uri.parse(location).lastPathSegment
+            setOnClickListener {
+                //dismiss()
+                //navigateUp()
+                navigateBack()
+            }
         }
 
         view.findViewById<MaterialTextView>(R.id.number_description).apply {
