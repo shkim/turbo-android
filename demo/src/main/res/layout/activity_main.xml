@@ -7,40 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".main.MainActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/tabBar"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_nav_host"
+        android:name="dev.hotwire.turbo.demo.main.MainSessionNavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/tabs"
-        />
-
-    <ViewFlipper
-        android:id="@+id/tabSwitcher"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:measureAllChildren="false"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tabBar"
-        >
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/tab1"
-            android:name="dev.hotwire.turbo.demo.main.MainSessionNavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:tag="tab1"
-            />
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/tab2"
-            android:name="dev.hotwire.turbo.demo.main.MainSessionNavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:tag="tab2"
-            />
-    </ViewFlipper>
+        android:layout_height="match_parent"
+        app:defaultNavHost="false" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
